@@ -9,6 +9,7 @@ const Calculator = () => {
 			<button> * </button>
 			<button> / </button>
 			<input type="number" />
+			<code className="result">0</code>
 		</div>
 	)
 }

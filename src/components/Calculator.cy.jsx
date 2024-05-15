@@ -14,6 +14,20 @@ describe('<Calculator />', () => {
 		cy.get('button').contains('/').should('be.visible')
 		cy.get('input[type="number"]').should('be.visible')
 	})
+
+	// 2. Komponenten ska initialt visa att resultatet är noll.
+	it('displays the result 0 initially', () => {
+		cy.get('.result')
+			.and('be.visible')
+			.then(resultElement => {
+				// cy.log(resultElement.text())
+				const text = resultElement.text()
+				expect(text).to.equal('0')
+			})
+	})
+	// Två sätt att plocka ut texten ur ett element:
+	// .invoke('text').then(text => {})
+	// .then(element => { element.text() })
 })
 
 /*
