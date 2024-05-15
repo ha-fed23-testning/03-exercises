@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Login from './components/Login.jsx'
+import Calculator from './components/Calculator.jsx'
 
 function App() {
 	const [count, setCount] = useState(0)
@@ -17,10 +18,7 @@ function App() {
 		</header>
 		<main>
 			<Login />
-
-
-
-
+			<Calculator />
 
 		</main>
 		</>
