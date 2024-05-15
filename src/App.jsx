@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Login from './components/Login.jsx'
 
 function App() {
 	const [count, setCount] = useState(0)
@@ -15,12 +16,8 @@ function App() {
 			</nav>
 		</header>
 		<main>
-			<h2> Välkommen gäst </h2>
-			<section className="form">
-				<label> Namn </label>
-				<input type="text" value="Kalle" />
-				<button> Spara namn </button>
-			</section>
+			<Login />
+
 
 
 
