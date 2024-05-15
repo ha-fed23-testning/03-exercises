@@ -21,6 +21,16 @@ describe('<Login />', () => {
 	})
 
 
+	// 3. När användaren skriver in sitt namn i textfältet och klickar på button, ska namnet visas som en rubrik i komponenten.
+	it("displays the users' entered name", () => {
+		// Variabler hjälper oss att eliminera "stava fel"-buggar
+		const name = 'Hermione'
+		cy.get('input').type(name)
+		cy.get('button').click()
+		cy.get('h2').invoke('text').then(text => {
+			expect( text ).to.have.string(name)
+		})
+	})
 })
 
 /*
