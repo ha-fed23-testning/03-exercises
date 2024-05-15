@@ -22,13 +22,23 @@ describe('<Login />', () => {
 
 
 	// 3. När användaren skriver in sitt namn i textfältet och klickar på button, ska namnet visas som en rubrik i komponenten.
-	it("displays the users' entered name", () => {
+	it("save name and logout", () => {
 		// Variabler hjälper oss att eliminera "stava fel"-buggar
 		const name = 'Hermione'
 		cy.get('input').type(name)
 		cy.get('button').click()
 		cy.get('h2').invoke('text').then(text => {
 			expect( text ).to.have.string(name)
+		})
+
+		// 4. När användaren har skrivit in sitt namn, ska texten på button ändras till "Logga ut".
+		cy.get('button').contains('Logga ut').should('be.visible')
+
+		// 5. När man klickar på knappen för att logga ut, ska användarens namn inte längre visas.
+		cy.get('button').click()
+		cy.get('h2').invoke('text').then(text => {
+			const nameIsInText = text.includes(name)
+			expect( nameIsInText ).to.be.false
 		})
 	})
 })

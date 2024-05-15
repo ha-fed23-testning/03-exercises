@@ -5,7 +5,12 @@ const Login = () => {
 	const [savedName, setSavedName] = useState('gäst')
 
 	const handleClick = () => {
-		setSavedName( name )
+		// Olika strängar betyder att användaren skrivit något nytt och vill spara det nya namnet
+		if( savedName === name ) {
+			setSavedName('gäst')
+		} else {
+			setSavedName( name )
+		}
 	}
 
 	return (
@@ -18,7 +23,7 @@ const Login = () => {
 					value={name}
 					onChange={e => setName(e.target.value)}
 					/>
-				<button onClick={handleClick}> Spara namn </button>
+				<button onClick={handleClick}> {savedName === 'gäst' ? 'Spara namn' : 'Logga ut'} </button>
 			</section>
 		</div>
 	)
