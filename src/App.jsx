@@ -18,6 +18,7 @@ function App() {
 		</header>
 		<main>
 			<Login />
+			<TodoList />
 			<Calculator />
 
 		</main>
