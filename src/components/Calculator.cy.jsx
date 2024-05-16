@@ -28,6 +28,14 @@ describe('<Calculator />', () => {
 	// Två sätt att plocka ut texten ur ett element:
 	// .invoke('text').then(text => {})
 	// .then(element => { element.text() })
+
+	// 3. När man skriver in ett tal och klickar på plusknappen, ska resultatet ökas med det skrivna talet.
+	it('should add my number to the current result', () => {
+		const testNumber = 15
+		cy.get('input[type="number"]').type(String(testNumber))
+		cy.get('button').contains('+').click()
+		cy.get('.result').contains(String(testNumber))
+	})
 })
 
 /*
