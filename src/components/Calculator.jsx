@@ -14,6 +14,7 @@ const Calculator = () => {
 			<button> * </button>
 			<button> / </button>
 			<input
+				data-cy="number-input"
 				type="number"
 				value={numberInput}
 				onChange={e => setNumberInput(Number(e.target.value))}
